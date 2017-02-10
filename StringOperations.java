@@ -20,7 +20,7 @@ public class StringOperations {
 	
 	static boolean isOperator(char ch)
 	{
-		if(ch=='+'||ch=='-'||ch=='*'||ch=='÷')
+		if(ch=='+'||ch=='-'||ch=='*'||ch=='/')
 		{
 			return true;
 		}
@@ -67,7 +67,7 @@ public class StringOperations {
 		boolean isValidString=false;
 		for(int i=0;i<str.length();i++)
 		{
-			if(str.charAt(i)=='0'||str.charAt(i)=='1'||str.charAt(i)=='2'||str.charAt(i)=='3'||str.charAt(i)=='4'||str.charAt(i)=='5'||str.charAt(i)=='6'||str.charAt(i)=='7'||str.charAt(i)=='8'||str.charAt(i)=='9'||str.charAt(i)=='+'||str.charAt(i)=='-'||str.charAt(i)=='*'||str.charAt(i)=='÷')
+			if(str.charAt(i)=='0'||str.charAt(i)=='1'||str.charAt(i)=='2'||str.charAt(i)=='3'||str.charAt(i)=='4'||str.charAt(i)=='5'||str.charAt(i)=='6'||str.charAt(i)=='7'||str.charAt(i)=='8'||str.charAt(i)=='9'||str.charAt(i)=='+'||str.charAt(i)=='-'||str.charAt(i)=='*'||str.charAt(i)=='/')
 			{
 				isValidString=true;
 			}
@@ -91,7 +91,7 @@ public class StringOperations {
 			 
 		 case '*':
 			 return op1*op2;
-		 case '÷':
+		 case '/':
 			 return op1/op2;
 		 }
 		 return 0;
