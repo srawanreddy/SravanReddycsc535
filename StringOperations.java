@@ -138,7 +138,7 @@ public class StringOperations {
 		}
 		return number;
 	}
-	
+/* breakString functions breaks the whole string into set of operands and operators*/
 	static void breakString(String str)
 	{
 		
@@ -146,7 +146,7 @@ public class StringOperations {
 		String operand2=new String();
 		char operator=' ';
 		boolean anyOperatorOccuredYet=false;
-		if(isValidString(str)==true)
+		if(isValidString(str)==true) /*This if condition looks for validity of the string to participate in arithmatic operation*/
 		{ 
 			for(int i=0;i<str.length();i++)
 			{
@@ -155,7 +155,7 @@ public class StringOperations {
 					operator=str.charAt(i);
 					anyOperatorOccuredYet=true;
 				}
-				else if(isOperator(str.charAt(i))&&anyOperatorOccuredYet==true)
+				else if(isOperator(str.charAt(i))&&anyOperatorOccuredYet==true)/*This conditon focuses on strings with multiple operators*/
 				{
 					operand1=convertInt2String(performOperation(convertString2Int(operand1), convertString2Int(operand2), operator));
 					operator=str.charAt(i);
@@ -173,7 +173,8 @@ public class StringOperations {
 				{ continue; }
 				
 			}
-		    System.out.println("Operand1: "+ operand1 +" Operand2: " + operand2);
+			/*The substrings operand1, operand2 are fed into function convertString2Int() to get integer equvalents of those substrings */
+			/*The output of convertString2Int() and character operator is fed into performOperation() function which performs arithmatic operation and return result in integer */
 			if(anyOperatorOccuredYet==true)
 		    System.out.println("Result is: "+performOperation(convertString2Int(operand1), convertString2Int(operand2), operator));
 			else if(anyOperatorOccuredYet==false)
@@ -189,23 +190,28 @@ public class StringOperations {
 		int choice=0;
 String str=new String();
 Scanner sc=new Scanner(System.in);
-System.out.println("Enter a string");
+System.out.println("Enter a string"); /* Ask user to enter a string*/
 str=sc.nextLine();
 System.out.println("String given is: "+ str);
+/* Ask user to select an operation*/
 System.out.println("Enter \n 1: Display vowels \n 2: Display consonents \n 3: Display digits \n 4:Perform arithmatic operations");
 choice=sc.nextInt();
 switch(choice)
 {
 case 1:
+	/* If user selects to display vowels, displayVowels() function is called*/
 	displayVowels(str);
 	break;
 case 2:
+	/* If user selects to display consonants, displayConsonents() function is called*/
 	displayConsonents(str);
 	break;
 case 3:
+	/* If user selects to display digitd, displayDigits() function is called*/
 	displayDigits(str);
 	break;
 case 4:
+	/* If user selects to perform arithmatic operation on the string, breakString() function is called*/
 	breakString(str);
 	break;
 	default:
