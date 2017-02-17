@@ -42,7 +42,15 @@ while((begin1<=end1) && (begin2<=end2))
 
 public static void main(String args[])
 {
-int list[]={5,6,4,7,3,8,2,1,9};
+System.out.println("Enter the size of the array");
+Scanner sc=new Scanner(System.in);
+int size=sc.nextInt();
+int list[]=new int[size];
+for(int i=0;i<size;i++)
+{
+  System.out.println("Enter element "+(i+1));
+  list[i]=sc.nextInt();
+}
 int high=(list.length-1),low=0;
 System.out.println("before sorting:");
 for(int i=0;i<list.length;i++)
@@ -56,5 +64,6 @@ for(int i=0;i<list.length;i++)
 {
 System.out.print(" "+list[i]+" ");
 }
+sc.close();
 }
 }
