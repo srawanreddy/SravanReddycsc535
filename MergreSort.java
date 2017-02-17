@@ -65,19 +65,28 @@ public class MergreSort {
 
 public static void main(String args[])
 {
-int arr[]={5,6,4,7,3,8,2,1,9};
-int high=(arr.length-1),low=0;
-System.out.println("before sorting:");
-for(int i=0;i<arr.length;i++)
+System.out.println("Enter the size of the array");
+Scanner sc=new Scanner(System.in);
+int size=sc.nextInt();
+int list[]=new int[size];
+for(int i=0;i<size;i++)
 {
-System.out.print(" "+arr[i]+" ");
+  System.out.println("Enter element "+(i+1));
+  list[i]=sc.nextInt();
+}
+int high=(list.length-1),low=0;
+System.out.println("before sorting:");
+for(int i=0;i<list.length;i++)
+{
+System.out.print(" "+list[i]+" ");
 }
 System.out.print("\n");
-divide(arr,low,high);
+divide(list,low,high);
 System.out.println("After sorting:");
-for(int i=0;i<arr.length;i++)
+for(int i=0;i<list.length;i++)
 {
-System.out.print(" "+arr[i]+" ");
+System.out.print(" "+list[i]+" ");
 }
+sc.close();
 }
 }
