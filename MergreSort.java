@@ -18,7 +18,7 @@ public class MergreSort {
 		
 		
 		int begin1, end1, begin2, end2,i,k;
-		int temp[]=new int[20];
+		int temp[]=new int[50];
 		 i = low; 
 		begin1=low;
 		 end1=mid;
